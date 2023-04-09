@@ -3,43 +3,41 @@ body {
 }
 
 header {
-  background: linear-gradient(90deg, rgba(255, 0, 0, 0.384), rgba(255, 166, 0, 0.452), rgba(255, 255, 0, 0.452),#7bed9f, #3498dba2, rgba(128, 0, 128, 0.575), rgba(0, 0, 0, 0.329), rgba(87, 29, 29, 0.637));
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0.384), rgba(255, 166, 0, 0.452), rgba(255, 255, 0, 0.452),#7bed9f, #3498dba2, rgba(128, 0, 128, 0.575), rgba(0, 0, 0, 0.486), rgba(87, 29, 29, 0.637));
   padding-top: 1%;
 
 }
 
 section {
-  max-width: 900px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding-bottom: 2%;
 }
 
 section h1 {
-  font-size: 50px;
+  font-size: 3.125rem;
   text-align: center;
   font-family: cursive;
 }
 
 section p {
-  font-size: 40px;
+  font-size: 2.5rem;
   text-align: center;
   font-family: cursive;
 }
 
-/* hamburger */
 .circlecheck {
   display: none;
 }
 
 .burger {
   position: relative;
-  background-color: white;
+  background-color: rgb(240, 213, 252);
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  position: fixed;
-  top: 5vh; 
-  right: 5vw; 
+  position:fixed;
+  top: 5%; 
+  right: 5%; 
   z-index: 2000;
   box-shadow: 0 1rem 3rem black;
   text-align: center; 
@@ -51,10 +49,10 @@ section p {
   width: 4rem;
   border-radius: 50%;
   position: fixed;
-  top: 5.5vh; 
-  right: 5.5vw; 
+  top: 5%; 
+  right: 5.5%; 
   background-image: radial-gradient(rgba(128, 0, 128), black);
-  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: transform 1s 
 }
 
 .nav {
@@ -62,17 +60,17 @@ section p {
   position: fixed;
   top: 0;
   right: -60vw;
-  transition: all 1.2s;
+  transition: all 2s;
 }
 
 .list {
   font-family: cursive;
   position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 30%;
+  left: 45%;
+  /* transform: translate(-50%, -50%); */
   list-style: none;
-  text-align:center;
+  text-align:right;
   width: 50%;
 }
 
@@ -84,7 +82,7 @@ section p {
 
 .link:hover,
 .link:active {
-  color: rgba(0, 17, 250, 0.623);
+  color: #3498dba2;
   cursor: pointer;
 }
 
@@ -92,7 +90,6 @@ section p {
   transform: scale(26);
 }
 .circlecheck:checked ~ .nav {
-  opacity: 1;
   width: 100%;
   right: 0;
 }
@@ -127,13 +124,6 @@ section p {
 .buns::after {
   top: 0.8rem;
 }
-
-/* .circlecheck:hover buns:before {
-  top: -1rem;
-}
-.circlecheck:hover buns::after {
-  top: 1rem;
-} */
 
 .circlecheck:checked + .burger .buns {
   background-color: transparent;
