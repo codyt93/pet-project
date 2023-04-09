@@ -11,8 +11,210 @@
 
 <body>
     <header>
+        <section>
+            <h1>Scraggily Pets</h1>
+            <p>The scragglier the petter!</p>
+        </section>
+    
+        <!-- hamburger -->
+        <input type="checkbox" id="navi-toggle" class="circlecheck"/>
+        <label for="navi-toggle" class="burger">
+            <span class="buns"></span>
+        </label>
+        <div class="background"></div>
+    
+      <!-- nav -->
+        <nav class="nav">
+            <ul class="list">
+                <li class="item"><a class="link"> Dogsies </a></li>
+                <li class="item"><a class="link"> Kitters </a></li>
+                <li class="item"><a class="link"> Feeline Lucky? </a></li>
+                <li class="item"><a class="link"> Search </a></li>
+                <li class="item"><a class="link"> Contact Us </a></li>
+            </ul>
+        </nav>
+    </header>    
+
+    <!-- <header class="main-header"> -->
+        <!-- <nav class="menu">
+            <menu>
+                <li><a href="">Dogsies</a></li>
+                <li><a href="">Kitters</a></li>
+                <li><a href="">Feeline Lucky?</a></li>
+                <li><a href="">Search</a></li>
+                <li><a href="">Contact Us</a></li>
+            </menu>
+        </nav>
+
+
         <h1>Scraggily Pets</h1>
-        <h2>Scragglier the better!</h2>
-    </header>
+        <h2>Scragglier the petter!</h2>
+    </header> -->
+
+    <section class="featured-cards-container">
+        <div class="card">
+            <figure>
+                <img src="http://placekitten.com/300/300"
+                     alt="cute kitten">
+                <figcaption>Featured Pet</figcaption>
+            </figure>
+
+        <div class="card">
+            <figure>
+                <img src="http://placekitten.com/300/300"
+                    alt="cute kitten">
+                <figcaption>Featured Pet</figcaption>
+            </figure>
+
+        <div class="card">
+            <figure>
+                <img src="http://placekitten.com/300/300"
+                    alt="cute kitten">
+                <figcaption>Featured Pet</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="location-search-bar">
+        <form>
+            <label for="location-entry">Enter Address to Search Nearby Pets</label>
+            <input type="text" id="locale" name="user-locale"/>
+        </form>
+    </section>
+
+    <section class="choose-attributes">
+        <form>
+            <fieldset>
+                <legend>Dogsies</legend>
+
+                <input type="radio" id="age-range" name="attribute">
+                <label for="ages">Age Range</label><br>
+                    <select id="age-select">
+                        <option value="">--choose pet age--</option>
+                            <option value="baby">0-6 months</option>
+                            <option value="young">6 months - 1 year</option>
+                            <option value="adult">1 - 6 years</option>
+                            <option value="senior">7+ years</option>
+                    </select><br>
+
+                <input type="radio" id="color-black" name="attribute">
+                <label for="coloring">Black Beauties</label><br>
+
+                <input type="radio" id="extra-tlc" name="attribute">
+                <label for="tlc">Extra TLC</label><br>
+
+                <input type="radio" id="uniquely-abled" name="attribute">
+                <label for="abled">Uniquely Abled</label><br>
+
+                <button id="submit-attributes">Submit Attributes</button>
+            </fieldset>
+        </form>
+
+            <fieldset>
+                <legend>Kitters</legend>
+
+                <input type="radio" id="age-range" name="attribute">
+                <label for="ages">Age Range</label><br>
+                <select id="age-select">
+                    <option value="">--choose pet age--</option>
+                        <option value="baby">0-6 months</option>
+                        <option value="young">6 months - 1 year</option>
+                        <option value="adult">1 - 6 years</option>
+                        <option value="senior">7+ years</option>
+                </select><br>
+
+                <input type="radio" id="color-black" name="attribute">
+                <label for="coloring">Black Beauties</label><br>
+
+                <input type="radio" id="extra-tlc" name="attribute">
+                <label for="tlc">Extra TLC</label><br>
+
+                <input type="radio" id="uniquely-abled" name="attribute">
+                <label for="abled">Uniquely Abled</label><br>
+
+                <button id="submit-attributes">Submit Attributes</button>
+            </fieldset>
+
+            <section class="feeline-lucky-card">
+                <figure>
+                    <img src="https://media0.giphy.com/media/mlvseq9yvZhba/giphy.gif?cid=ecf05e47f8zv0kpnhwygmbnp73w2yuv1avj9h5wp7w9xfq48&rid=giphy.gif&ct=g"
+                        alt="cute kitten">
+                        <figcaption><button>Feeline Lucky?</button></figcaption>
+                </figure>
+            </section>
+        </form>
+    </section>
+
+    <main>
+        <section>
+            <h3>Onyx</h3>
+            <details>
+                <summary><img src="https://static.wixstatic.com/media/dabbfc_b95fa5447ea6451eab34da40dd42e6ff~mv2_d_3840_2880_s_4_2.jpg/v1/fill/w_640,h_414,al_l,q_80,usm_0.66_1.00_0.01,enc_auto/dabbfc_b95fa5447ea6451eab34da40dd42e6ff~mv2_d_3840_2880_s_4_2.jpg"
+                    width="200"
+                    height="200" 
+                    alt="black cat loafing"></summary>Details</summary>
+                Hi I'm Onyx! I'm cute. Please adopt me!
+            </details>
+        </section>
+
+        <section>
+            <h3>Grace</h3>
+            <details>
+                <summary><img src="https://purrfectlove.net/wp-content/uploads/2014/06/tripod-cat.jpg" 
+                    width="200"
+                    height="200" 
+                    alt="relaxed gray cat with 3 legs"></summary>Details</summary>
+                Hi I'm Grace! I'm cute. Please adopt me!
+            </details>
+        </section>
+
+        <section>
+            <h3>Snowy</h3>
+            <details>
+                <summary><img src="https://www.treehugger.com/thmb/tB-EpYz-XxMKN45JQFmkk_FqFvo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2019__10__galen_blind_dog_running-d130f1293fb644de9422392ed05ac39e.jpg" 
+                    width="200"
+                    height="200" 
+                    alt="blind puppy playing"></summary>Details</summary>
+                Hi I'm Snowy! I'm blind. Please adopt me!
+            </details>
+        </section>
+
+        <section>
+            <h3>Chip</h3>
+            <details>
+                <summary><img src="https://www.charlestonpetmassage.com/wp-content/uploads/2019/04/walkin-wheels-rear.jpg"
+                    width="200"
+                    height="200" 
+                    alt="dog in wheelchair at the beach"></summary>Details</summary>
+                Hi I'm Chip! I've got wheels. Please adopt me!
+            </details>
+        </section>
+
+        <section>
+            <h3>Tammy</h3>
+            <details>
+                <summary><img src="https://api.brusselstimes.com/wp-content/uploads/2022/11/fd746706-flossie-getting-pets_tcm25-726775.jpg"
+                    width="200"
+                    height="200" 
+                    alt="old happy cat"></summary>Details</summary>
+                Hi I'm Tammy! I'm old. Please adopt me!
+            </details>
+        </section>
+    </main>
+
+    <section class="adoption-form-contact">
+        <h3>See an animal you love?</h3>
+        <form>
+            <input type="button" name="submit" value="Take me to the application!">
+        </form>
+        <h3>Contact Us! 555-555-5555 | werock@sodoyou.com</h3>
+    </section>
+
+    <footer>
+        <h4>“You can’t buy love but you can rescue it.” -Anonymous</h4>
+    </footer>
+
 </body>
 </html>
+
+`
