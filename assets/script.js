@@ -4,37 +4,38 @@ var petDistance = document.getElementById ("petDistance")
 var enterLocation = document.getElementById ("locale")
 var token;
 
-fetch("https://api.petfinder.com/v2/oauth2/token", {
-    body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
-    headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-    },
-    method: "POST"
-})
-.then(res => res.json())
-.then(data => {
-  console.log(data)
-  token=data.access_token
-  fetchDog(data.access_token)
-  fetchDogLocation(data.access_token,"98258")
-})
+// fetch("https://api.petfinder.com/v2/oauth2/token", {
+//     body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
+//     headers: {
+//         "Content-Type": "application/x-www-form-urlencoded"
+//     },
+//     method: "POST"
+// })
+// .then(res => res.json())
+// .then(data => {
+//   console.log(data)
+//   token=data.access_token
+//   fetchDog(data.access_token)
+//   fetchDogLocation(data.access_token,"98258")
+// })
 
 
 
-function fetchDog(token){
+function fetchDog(){
   fetch("https://api.petfinder.com/v2/animals?type=dog",{
     headers:{
       Authorization:`Bearer ${token}`
     }
   }).then(res => res.json())
   .then(data => {
+    // create elements, append to page
     console.log(data)
   })
 }
 
 
 
-function fetchDogLocation(token, zip){
+function fetchDogLocation(zip){
     fetch("https://api.petfinder.com/v2/animals?location=" + zip,{
       headers:{
         Authorization:`Bearer ${token}`
@@ -59,25 +60,25 @@ function fetchDogLocation(token, zip){
 
 
 
-  fetch("https://api.petfinder.com/v2/oauth2/token", {
-    body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
-    headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-    },
-    method: "POST"
-})
-.then(function (response) {
-  return response.json();
-})
-.then(function (data) {
-  fetchSeniorDog(data.access_token)
-})
+//   fetch("https://api.petfinder.com/v2/oauth2/token", {
+//     body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
+//     headers: {
+//         "Content-Type": "application/x-www-form-urlencoded"
+//     },
+//     method: "POST"
+// })
+// .then(function (response) {
+//   return response.json();
+// })
+// .then(function (data) {
+//   fetchSeniorDog(data.access_token)
+// })
 
 
 var petInfoTable = document.getElementById("table");
 
 
-function fetchSeniorDog(token) {
+function fetchSeniorDog() {
   fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior",{
     headers:{
       Authorization:`Bearer ${token}`
@@ -117,22 +118,24 @@ function fetchSeniorDog(token) {
 
 
 
-    // function getToken() {
 
-//   function retrieve()  {
-//     return fetch("https://api.petfinder.com/v2/oauth2/token", {
-//       body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
-//       headers: {
-//           "Content-Type": "application/x-www-form-urlencoded"
-//       },
-//       method: "POST"
-//   })
-//   .then(res => res.json())
-//   .then(json => (json.access_token))
-//   }
-//     return retrieve().then(data => console.log(data));
-//   }
+  function retrieveToken()  {
+    return fetch("https://api.petfinder.com/v2/oauth2/token", {
+      body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
+      headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST"
+  })
+  .then(res => res.json())
+  .then(function (data) {
+    // this where we access to token
+    token=data.access_token
+    fetchSeniorDog()
+  })
+  }
 
+  retrieveToken()
   
     // var token = getToken();
     // console.log(token);
