@@ -1,10 +1,12 @@
-var urlBreeds = "https://api.petfinder.com/v2/oauth2/token?grant_type=client_credentials&client_id=h4wf8DBUeKwOsqWiLWoU7VN06DEPb7llyE8Sk3Stb1Kyr5ecda&client_secret=KMjhTXuUMtsH7IsUq6eKKcWUkTGBA5JbrHCgil4R"
+              // where and how store these secret keys?
 var apiKey = "h4wf8DBUeKwOsqWiLWoU7VN06DEPb7llyE8Sk3Stb1Kyr5ecda"
 var secret = "KMjhTXuUMtsH7IsUq6eKKcWUkTGBA5JbrHCgil4R"
 var petDistance = document.getElementById ("petDistance")
 var enterLocation = document.getElementById ("locale")
 var token;
 
+
+// heres the api key + secret + token
 fetch("https://api.petfinder.com/v2/oauth2/token", {
     body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
     headers: {
@@ -19,8 +21,16 @@ fetch("https://api.petfinder.com/v2/oauth2/token", {
   fetchDog(data.access_token)
   fetchDogLocation(data.access_token,"98258")
 })
-function fetchDog(token){
-  fetch("https://api.petfinder.com/v2/animals?type=dog",{
+.then(function (data) {
+  fetchSeniorDog(data.access_token)
+})
+
+
+var petInfoTable = document.getElementById("table");
+
+
+function fetchSeniorDog(token) {
+  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior",{
     headers:{
       Authorization:`Bearer ${token}`
     }
