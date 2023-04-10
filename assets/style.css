@@ -23,7 +23,7 @@ section p {
   font-family: cursive;
   text-align: center;
 }
-
+ /* hamburger & burger list styling */
 .circlecheck {
   display: none;
 }
@@ -132,7 +132,26 @@ section p {
   top: 0;
   transform: rotate(135deg);
 }
+
 .circlecheck:checked + .burger .buns::after {
   top: 0;
   transform: rotate(-135deg);
+}
+
+/* featuerd pet styling */
+#featuredPet {
+    font-family: cursive;
+}
+
+/* pet result styling */
+
+#petName {
+    font-size: 2rem;
+    font-family: cursive;
+    color:rgba(128, 0, 128);
+}
+
+#petBio {
+    font-size: 15px;
+    font-family: sans-serif;
 }
