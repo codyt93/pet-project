@@ -96,8 +96,9 @@ function fetchFeaturedPet1() {
 
           featuredPetName.textContent = data.animals[i].name;
           featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-          featuredPetPic.setAttribute("width", "600");
-          featuredPetPic.setAttribute("height", "600");
+          // featuredPetPic.setAttribute("width", "600");
+          // featuredPetPic.setAttribute("height", "600");
+          featuredPetPic.classList.add("featured-pet-pics");
 
           featuredCard1.appendChild(featuredPetPic);
           featuredCard1.appendChild(featuredPetName);
