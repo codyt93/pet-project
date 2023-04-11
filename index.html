@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+      </style>
     <link rel="stylesheet" href="./assets/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+<!-- ---------BELOW-----------
+script tags go on the bottom of page.
+it messes up the order of operations for other algorithms up here
+--------------BELOW----------- -->
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Document</title>
 </head>
 
@@ -51,12 +61,13 @@
         <h1>Scraggily Pets</h1>
         <h2>Scragglier the petter!</h2>
     </header> --> 
+    <main>
         <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
             <!--Card 1-->
             <div class="rounded overflow-hidden shadow-lg">
                 <img class="w-full" src="http://placekitten.com/300/300" alt="Mountain">
                 <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">Featured Pet!</div>
+                    <div class="font-bold text-xl mb-2" id="featuredPet">Featured Pet!</div>
                     <p class="text-gray-700 text-base">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
                     </p>
@@ -67,7 +78,7 @@
             <div class="rounded overflow-hidden shadow-lg">
                 <img class="w-full" src="http://placekitten.com/300/300" alt="River">
                 <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">Featured Pet!</div>
+                    <div class="font-bold text-xl mb-2" id="featuredPet">Featured Pet!</div>
                     <p class="text-gray-700 text-base">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
                     </p>
@@ -75,9 +86,14 @@
                 <div class="px-6 pt-4 pb-2"></div>
             </div>
         
-            <!--Card 3-->
+        
+            <!--Card 1-->
+            <section id="card1">
             <div class="rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="http://placekitten.com/300/300" alt="River">
+<!-- ---------BELOW-----------
+Took out placekitten image so API results could display
+--------------BELOW----------- -->
+                <!-- <img class="w-full" src="http://placekitten.com/300/300" alt="Mountain"> -->
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">Featured Pet!</div>
                     <p class="text-gray-700 text-base">
@@ -85,9 +101,49 @@
                     </p>
                 </div>
                 <div class="px-6 pt-4 pb-2"></div>
-                </div>
             </div>
+        </section>
+
+
+            <!--Card 2-->
+            <section id="card2">
+            <div class="rounded overflow-hidden shadow-lg">
+<!-- ---------BELOW-----------
+Took out placekitten image so API results could display
+--------------BELOW----------- -->
+                <!-- <img class="w-full" src="http://placekitten.com/300/300" alt="River"> -->
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Featured Pet!</div>
+                    <p class="text-gray-700 text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                    </p>
+                </div>
+                <div class="px-6 pt-4 pb-2"></div>
+            </div>
+        </section>
+
+
+            <!--Card 3-->
+            <section id="card3">
+            <div class="rounded overflow-hidden shadow-lg">
+<!-- ---------BELOW-----------
+Took out placekitten image so API results could display
+--------------BELOW----------- -->
+                <!-- <img class="w-full" src="http://placekitten.com/300/300" alt="River"> -->
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2" id="featuredPet">Featured Pet!</div>
+                    <p class="text-gray-700 text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                    </p>
+                </div>
+                <div class="px-6 pt-4 pb-2"></div>
+                </div>
+            </section>
         </div>
+
+<!-- ---------BELOW-----------
+Leaving this here in case we need to reference the original HTML later
+--------------BELOW----------- -->
       <!-- </h1> -->
     <!-- <section class="featured-cards-container">
         <div class="card">
@@ -96,7 +152,6 @@
                     alt="cute kitten">
                 <figcaption>Featured Pet</figcaption>
             </figure>
-
         <div class="card">
             <figure>
                 <img src="http://placekitten.com/300/300"
@@ -113,16 +168,25 @@
         </div>
     </section> -->
 
+
+<!-- ---------BELOW-----------
+Might get search by zip code working
+--------------BELOW----------- -->
     <section class="location-search-bar">
         <form>
-            <label for="location-entry">Enter Address to Search Nearby Pets</label>
+            <label for="location-entry">Enter Zip Code to Search Nearby Pets</label>
             <input type="text" id="locale" name="user-locale"/>
+            <button type="submit">Search</button>
         </form>
     </section>
 
-    <div class="flex justify-evenly ...">
+
+<!-- ---------BELOW-----------
+Will leave this here in case we want to expand search by age range and specify physical vs. medical needs
+--------------BELOW----------- -->
+    <!-- <div class="flex justify-evenly ..."> -->
         <!-- <div>01</div> -->
-        <section>
+        <!-- <section>
             <p>Dogsies!</p>
             <input type="radio" id="age-range" name="attribute">
     <label for="ages">Age Range</label><br>
@@ -134,16 +198,13 @@
                 <option value="senior">7+ years</option>
         </select><br>
 
-    <input type="radio" id="color-black" name="attribute">
-    <label for="coloring">Black Beauties</label><br>
-
     <input type="radio" id="extra-tlc" name="attribute">
     <label for="tlc">Extra TLC</label><br>
 
     <input type="radio" id="uniquely-abled" name="attribute">
     <label for="abled">Uniquely Abled</label><br>
 
-    <button id="submit-attributes">Submit Attributes</button>
+    <button class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
         </section>
         <section>
             <p>Kitters!</p>
@@ -157,9 +218,6 @@
                 <option value="senior">7+ years</option>
         </select><br>
 
-    <input type="radio" id="color-black" name="attribute">
-    <label for="coloring">Black Beauties</label><br>
-
     <input type="radio" id="extra-tlc" name="attribute">
     <label for="tlc">Extra TLC</label><br>
 
@@ -167,7 +225,13 @@
     <label for="abled">Uniquely Abled</label><br>
 
     <button id="submit-attributes">Submit Attributes</button>
-        </section>
+        </section> -->
+
+
+        
+<!-- ---------BELOW-----------
+Feeline Lucky? card to be replaced by random trail API
+--------------BELOW----------- -->
         <section class="feeline-lucky-card">
             <figure>
                 <img src="https://cdn.vox-cdn.com/thumbor/9qJ3zWkhkIPQXOrScmOsFq5BwCg=/0x0:6000x4000/1200x900/filters:focal(2520x1520:3480x2480)/cdn.vox-cdn.com/uploads/chorus_image/image/57008903/shutterstock_1356281234.18.jpg"
@@ -242,74 +306,45 @@
         </form>
     </section> -->
 
-    
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+          <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://api.brusselstimes.com/wp-content/uploads/2022/11/fd746706-flossie-getting-pets_tcm25-726775.jpg">
+          <div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" id="petName">Meet Tammy!</h1>
+            <p class="mb-8 leading-relaxed" id="petBio">Hi I'm Tammy! I'm old. Please adopt me!</p>
+            <div class="flex justify-center">
+              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Adopt me!</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <table id="table"></table>
+     
+
+
+<!-- ---------BELOW-----------
+Button IDs to search Pet Type
+--------------BELOW----------- -->
     <main>
+        <button id="senior-dog-btn">Senior Dogs</button>
+        <button id="senior-cat-btn">Senior Cats</button>
+        <button id="special-needs-cat-btn">Special Needs Cats</button>
+        <button id="special-needs-dog-btn">Special Needs Dogs</button>
 
 
+<!-- ---------BELOW-----------
+Empty table that will have API results appended into it by petAPI.js
+--------------BELOW----------- -->
         <table id="table">
-
         </table>
-
-
-
-<!-- 
-        <section>
-            <h3>Tammy</h3>
-            <details>
-                <summary><img src="https://api.brusselstimes.com/wp-content/uploads/2022/11/fd746706-flossie-getting-pets_tcm25-726775.jpg"
-                    width="200"
-                    height="200" 
-                    alt="old happy cat"></summary>
-                Hi I'm Tammy! I'm old. Please adopt me!
-            </details>
-        </section>
-
-        <section>
-            <h3>Onyx</h3>
-            <details>
-                <summary><img src="https://static.wixstatic.com/media/dabbfc_b95fa5447ea6451eab34da40dd42e6ff~mv2_d_3840_2880_s_4_2.jpg/v1/fill/w_640,h_414,al_l,q_80,usm_0.66_1.00_0.01,enc_auto/dabbfc_b95fa5447ea6451eab34da40dd42e6ff~mv2_d_3840_2880_s_4_2.jpg"
-                    width="200"
-                    height="200" 
-                    alt="black cat loafing"></summary>
-                Hi I'm Onyx! I'm cute. Please adopt me!
-            </details>
-        </section>
-
-        <section>
-            <h3>Grace</h3>
-            <details>
-                <summary><img src="https://purrfectlove.net/wp-content/uploads/2014/06/tripod-cat.jpg" 
-                    width="200"
-                    height="200" 
-                    alt="relaxed gray cat with 3 legs"></summary>
-                Hi I'm Grace! I'm cute. Please adopt me!
-            </details>
-        </section>
-
-        <section>
-            <h3>Snowy</h3>
-            <details>
-                <summary><img src="https://www.treehugger.com/thmb/tB-EpYz-XxMKN45JQFmkk_FqFvo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2019__10__galen_blind_dog_running-d130f1293fb644de9422392ed05ac39e.jpg" 
-                    width="200"
-                    height="200" 
-                    alt="blind puppy playing"></summary>
-                Hi I'm Snowy! I'm blind. Please adopt me!
-            </details>
-        </section>
-
-        <section>
-            <h3>Chip</h3>
-            <details>
-                <summary><img src="https://www.charlestonpetmassage.com/wp-content/uploads/2019/04/walkin-wheels-rear.jpg"
-                    width="200"
-                    height="200" 
-                    alt="dog in wheelchair at the beach"></summary>
-                Hi I'm Chip! I've got wheels. Please adopt me!
-            </details>
-        </section> -->
     </main>
+    
 
-
+<!-- ---------BELOW-----------
+Reminder to make contact form
+If possible, it would be a better User Experience if user could access adoption form inside the pet's bio
+--------------BELOW----------- -->
     <section class="adoption-form-contact">
         <h3>See an animal you love?</h3>
         <form>
@@ -318,13 +353,13 @@
         <h3>Contact Us! 555-555-5555 | werock@sodoyou.com</h3>
     </section>
 
-
     <footer>
-        <h4>“You can`t buy love but you can rescue it.” -Anonymous</h4>
+        <h4>`"You can't buy love but you can rescue it."` -Anonymous</h4>
     </footer>
 
-    <script src="./assets/script.js"></script>
+    <script src="./assets/petAPI.js"></script>
     <script src="./assets/trailsAPI.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
 

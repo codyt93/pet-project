@@ -14,16 +14,16 @@ section {
 
 section h1 {
   font-size: 3rem;
-  font-family: cursive;
+  font-family: 'DynaPuff', cursive;
   text-align: center;
 }
 
 section p {
   font-size: 2.5rem;
-  font-family: cursive;
+  font-family: 'DynaPuff', cursive;
   text-align: center;
 }
-
+ /* hamburger & burger list styling */
 .circlecheck {
   display: none;
 }
@@ -132,7 +132,34 @@ section p {
   top: 0;
   transform: rotate(135deg);
 }
+
 .circlecheck:checked + .burger .buns::after {
   top: 0;
   transform: rotate(-135deg);
 }
+
+/* featuerd pet styling */
+#featuredPet {
+    font-family: 'DynaPuff', cursive;
+}
+
+/* pet result styling */
+
+#petName {
+    font-size: 2rem;
+    font-family: 'DynaPuff', cursive;
+    color:rgba(128, 0, 128);
+}
+
+#petBio {
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+
+.feeline-lucky-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
