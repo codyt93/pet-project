@@ -15,4 +15,7 @@ function fetchTrails(){
     })
   }
 
+
 fetchTrails()
+
+
