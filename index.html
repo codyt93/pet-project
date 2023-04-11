@@ -37,12 +37,12 @@ it messes up the order of operations for other algorithms up here
     <!-- nav -->
         <nav class="nav">
             <ul class="list">
-                <li class="item"><a class="link"> Featured Animal! </a></li>
-                <li class="item"><a class="link"> Dogsies </a></li>
-                <li class="item"><a class="link"> Kitters </a></li>
-                <li class="item"><a class="link"> Feeline Lucky? </a></li>
-                <li class="item"><a class="link"> Search </a></li>
-                <li class="item"><a class="link"> Contact Us </a></li>
+                <li class="item"><a class="link" href="#card1"> Featured Animal! </a></li>
+                <li class="item"><a class="link" href="#senior-dog-btn"> Dogsies </a></li>
+                <li class="item"><a class="link" href="#senior-cat-btn"> Kitters </a></li>
+                <li class="item"><a class="link" href="#advtrail"> Feeline Adventurous? </a></li>
+                <li class="item"><a class="link" href="#loco"> Search </a></li>
+                <li class="item"><a class="link" href="#contact"> Contact Us </a></li>
             </ul>
         </nav>
     </header>    
@@ -172,7 +172,7 @@ Leaving this here in case we need to reference the original HTML later
 <!-- ---------BELOW-----------
 Might get search by zip code working
 --------------BELOW----------- -->
-    <section class="location-search-bar">
+    <section class="location-search-bar"id="loco">
         <form>
             <label for="location-entry">Enter Zip Code to Search Nearby Pets</label>
             <input type="text" id="locale" name="user-locale"/>
@@ -232,7 +232,7 @@ Will leave this here in case we want to expand search by age range and specify p
 <!-- ---------BELOW-----------
 Feeline Lucky? card to be replaced by random trail API
 --------------BELOW----------- -->
-        <section class="feeline-lucky-card">
+        <section class="feeline-lucky-card"id="advtrail">
             <figure>
                 <img src="https://media0.giphy.com/media/mlvseq9yvZhba/giphy.gif?cid=ecf05e47f8zv0kpnhwygmbnp73w2yuv1avj9h5wp7w9xfq48&rid=giphy.gif&ct=g"
                     alt="cute kitten">
@@ -344,7 +344,8 @@ Empty table that will have API results appended into it by petAPI.js
 Reminder to make contact form
 If possible, it would be a better User Experience if user could access adoption form inside the pet's bio
 --------------BELOW----------- -->
-    <section class="adoption-form-contact">
+    <section class="adoption-form-contact"id="contact">
+        
         <h3>See an animal you love?</h3>
         <form>
             <input type="button" name="submit" value="Take me to the application!">
