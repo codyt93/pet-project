@@ -77,10 +77,11 @@ var featuredCard3 = document.getElementById("card3")
 // Step 4: Creating <h3> element of pet's name
 // Step 5: Creating <img> element of pet
 // Step 6: Within the loop: Create Element, Add Content, Append to Page
-// Step 7: Appended data to individual card by ID
+// Step 7: Assign CLASS to each element
+// Step 8: Appended data to individual card by ID
 // --------------BELOW-----------
 function fetchFeaturedPet1() {
-  fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
+  fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=98195&distance=100&special_needs=1&limit=1",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -120,10 +121,11 @@ function fetchFeaturedPet1() {
 // Step 4: Creating <h3> element of pet's name
 // Step 5: Creating <img> element of pet
 // Step 6: Within the loop: Create Element, Add Content, Append to Page
-// Step 7: Appended data to individual card by ID
+// Step 7: Assign CLASS to each element
+// Step 8: Appended data to individual card by ID
 // --------------BELOW-----------
 function fetchFeaturedPet2() {
-fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
+fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=98195&distance=100&special_needs=1&limit=1",{
   headers:{
     Authorization:`Bearer ${token}`
   }
@@ -133,7 +135,6 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs
     .then(function (data) {
       for (var i = 0; i < data.animals.length; i++) {
 
-        var returnedFeaturedPet = data.animals[i];
         var featuredPetPic = document.createElement("img");
         var featuredPetName = document.createElement("h3");
         var featuredPetBio = document.createElement("p");
@@ -163,10 +164,11 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs
 // Step 4: Creating <h3> element of pet's name
 // Step 5: Creating <img> element of pet
 // Step 6: Within the loop: Create Element, Add Content, Append to Page
-// Step 7: Appended data to individual card by ID
+// Step 7: Assign CLASS to each element
+// Step 8: Appended data to individual card by ID
 // --------------BELOW-----------
 function fetchFeaturedPet3() {
-    fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
+    fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=98195&distance=100&special_needs=1&limit=1",{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -176,7 +178,6 @@ function fetchFeaturedPet3() {
         .then(function (data) {
           for (var i = 0; i < data.animals.length; i++) {
   
-            var returnedFeaturedPet = data.animals[i];
             var featuredPetPic = document.createElement("img");
             var featuredPetName = document.createElement("h3");
             var featuredPetBio = document.createElement("p");
@@ -223,7 +224,7 @@ function fetchSeniorDog(event) {
 
   clearTable();
 
-  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior",{
+  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior&location=98195&distance=100",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -233,7 +234,6 @@ function fetchSeniorDog(event) {
       .then(function (data) {
         for (var i = 0; i < data.animals.length; i++) {
 
-          var returnedData = data.animals[i];
           var petPic = document.createElement("img")
           var petName = document.createElement("h3");
           // if (bio exists)
@@ -244,8 +244,8 @@ function fetchSeniorDog(event) {
           var petBio = document.createElement("p");
           var bio = data.animals[i].description
           var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
-          console.log(bio)
-          console.log(filterBio)
+          // console.log(bio)
+          // console.log(filterBio)
           petName.textContent = data.animals[i].name;
           petBio.textContent = filterBio
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
@@ -278,7 +278,7 @@ function fetchSeniorCat() {
 
   clearTable();
 
-  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior",{
+  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior&location=98195&distance=100",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -288,7 +288,6 @@ function fetchSeniorCat() {
       .then(function (data) {
         for (var i = 0; i < data.animals.length; i++) {
 
-          var returnedData = data.animals[i];
           var petPic = document.createElement("img")
           var petName = document.createElement("h3");
           var petBio = document.createElement("p");
@@ -301,11 +300,9 @@ function fetchSeniorCat() {
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
-                          // how can I omit bios that have special characters?
 
                           // how can I omit names that have too many characters?
 
-          // console.log(returnedData);
         }
       })
     }
@@ -328,7 +325,7 @@ function fetchSpecialNeedsCat() {
 
   clearTable();
 
-  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&special_needs=1",{
+  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&special_needs=1&location=98195&distance=100",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -351,11 +348,9 @@ function fetchSpecialNeedsCat() {
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
-                          // how can I omit bios that have special characters?
 
                           // how can I omit names that have too many characters?
 
-          // console.log(returnedData);
         }
       })
     }
@@ -378,7 +373,7 @@ function fetchSpecialNeedsDog() {
 
   clearTable();
   
-  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&special_needs=1",{
+  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&special_needs=1&location=98195&distance=100",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -401,11 +396,9 @@ function fetchSpecialNeedsDog() {
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
-                          // how can I omit bios that have special characters?
 
                           // how can I omit names that have too many characters?
 
-          // console.log(returnedData);
         }
       })
     }
