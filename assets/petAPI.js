@@ -148,9 +148,9 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs
 // --------------BELOW-----------
 // Since created elements are being manipulated by CSS by adding class, do we still need these?
 // --------------BELOW-----------
-        featuredCard1.appendChild(featuredPetPic);
-        featuredCard1.appendChild(featuredPetName);
-        featuredCard1.appendChild(featuredPetBio);
+        featuredCard2.appendChild(featuredPetPic);
+        featuredCard2.appendChild(featuredPetName);
+        featuredCard2.appendChild(featuredPetBio);
       }
     })
 }
@@ -191,9 +191,9 @@ function fetchFeaturedPet3() {
   // --------------BELOW-----------
   // Since created elements are being manipulated by CSS by adding class, do we still need these?
   // --------------BELOW-----------
-            featuredCard1.appendChild(featuredPetPic);
-            featuredCard1.appendChild(featuredPetName);
-            featuredCard1.appendChild(featuredPetBio);
+            featuredCard3.appendChild(featuredPetPic);
+            featuredCard3.appendChild(featuredPetName);
+            featuredCard3.appendChild(featuredPetBio);
           }
         })
       }

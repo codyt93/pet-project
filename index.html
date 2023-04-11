@@ -25,6 +25,7 @@ it messes up the order of operations for other algorithms up here
         <section>
             <h1>Scraggily Pets</h1>
             <p>The scragglier the petter!</p>
+            <h2>The place to go when you have a little extra TLC to give!</h3>
         </section>
     
         <!-- hamburger -->
@@ -37,7 +38,7 @@ it messes up the order of operations for other algorithms up here
     <!-- nav -->
         <nav class="nav">
             <ul class="list">
-                <li class="item"><a class="link"> Featured Animal! </a></li>
+                <li class="item"><a class="link"> Featured Pet! </a></li>
                 <li class="item"><a class="link"> Dogsies </a></li>
                 <li class="item"><a class="link"> Kitters </a></li>
                 <li class="item"><a class="link"> Feeline Lucky? </a></li>
@@ -47,94 +48,34 @@ it messes up the order of operations for other algorithms up here
         </nav>
     </header>    
 
-    <!-- <header class="main-header"> -->
-        <!-- <nav class="menu">
-            <menu>
-                <li><a href="">Dogsies</a></li>
-                <li><a href="">Kitters</a></li>
-                <li><a href="">Feeline Lucky?</a></li>
-                <li><a href="">Search</a></li>
-                <li><a href="">Contact Us</a></li>
-            </menu>
-        </nav>
-
-        <h1>Scraggily Pets</h1>
-        <h2>Scragglier the petter!</h2>
-    </header> --> 
     <main>
         <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-            <!-- Card 1
-            <div class="rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="http://placekitten.com/300/300" alt="Mountain">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2" id="featuredPet">Featured Pet!</div>
-                    <p class="text-gray-700 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                    </p>
-                </div>
-                <div class="px-6 pt-4 pb-2"></div>
-            </div> -->
-            <!--Card 2-->
-            <!-- <div class="rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="http://placekitten.com/300/300" alt="River">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2" id="featuredPet">Featured Pet!</div>
-                    <p class="text-gray-700 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                    </p>
-                </div>
-                <div class="px-6 pt-4 pb-2"></div>
-            </div> -->
-        
-        
+
             <!--Card 1-->
             <section id="card1">
             <div class="rounded overflow-hidden shadow-lg">
-<!-- ---------BELOW-----------
-Took out placekitten image so API results could display
---------------BELOW----------- -->
-                <!-- <img class="w-full" src="http://placekitten.com/300/300" alt="Mountain"> -->
                 <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">Featured Pet!</div>
-                    <p class="text-gray-700 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                    </p>
+                    <div class="font-bold text-center text-xl mb-2" id="featuredPet">Featured Pet!</div>
                 </div>
                 <div class="px-6 pt-4 pb-2"></div>
             </div>
         </section>
-
 
             <!--Card 2-->
             <section id="card2">
             <div class="rounded overflow-hidden shadow-lg">
-<!-- ---------BELOW-----------
-Took out placekitten image so API results could display
---------------BELOW----------- -->
-                <!-- <img class="w-full" src="http://placekitten.com/300/300" alt="River"> -->
                 <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">Featured Pet!</div>
-                    <p class="text-gray-700 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                    </p>
+                    <div class="font-bold text-center text-xl mb-2" id="featuredPet">Featured Pet!</div>
                 </div>
                 <div class="px-6 pt-4 pb-2"></div>
             </div>
         </section>
 
-
             <!--Card 3-->
             <section id="card3">
             <div class="rounded overflow-hidden shadow-lg">
-<!-- ---------BELOW-----------
-Took out placekitten image so API results could display
---------------BELOW----------- -->
-                <!-- <img class="w-full" src="http://placekitten.com/300/300" alt="River"> -->
                 <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2" id="featuredPet">Featured Pet!</div>
-                    <p class="text-gray-700 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
-                    </p>
+                    <div class="font-bold text-center text-xl mb-2" id="featuredPet">Featured Pet!</div>
                 </div>
                 <div class="px-6 pt-4 pb-2"></div>
                 </div>
@@ -142,32 +83,21 @@ Took out placekitten image so API results could display
         </div>
 
 <!-- ---------BELOW-----------
-Leaving this here in case we need to reference the original HTML later
+Button IDs to search Pet Type
 --------------BELOW----------- -->
-      <!-- </h1> -->
-    <!-- <section class="featured-cards-container">
-        <div class="card">
-            <figure>
-                <img src="http://placekitten.com/300/300"
-                    alt="cute kitten">
-                <figcaption>Featured Pet</figcaption>
-            </figure>
-        <div class="card">
-            <figure>
-                <img src="http://placekitten.com/300/300"
-                    alt="cute kitten">
-                <figcaption>Featured Pet</figcaption>
-            </figure>
+<main>
+    <div class="flex justify-center"></div>
+    <button id="senior-dog-btn">Senior Dogs</button>
+    <button id="senior-cat-btn">Senior Cats</button>
+    <button id="special-needs-cat-btn">Special Needs Cats</button>
+    <button id="special-needs-dog-btn">Special Needs Dogs</button>
 
-        <div class="card">
-            <figure>
-                <img src="http://placekitten.com/300/300"
-                    alt="cute kitten">
-                <figcaption>Featured Pet</figcaption>
-            </figure>
-        </div>
-    </section> -->
-
+<!-- ---------BELOW-----------
+Empty table that will have API results appended into it by petAPI.js
+--------------BELOW----------- -->
+    <table id="table">
+    </table>
+</main>
 
 <!-- ---------BELOW-----------
 Might get search by zip code working
@@ -179,7 +109,6 @@ Might get search by zip code working
             <button type="submit">Search</button>
         </form>
     </section>
-
 
 <!-- ---------BELOW-----------
 Will leave this here in case we want to expand search by age range and specify physical vs. medical needs
@@ -226,22 +155,6 @@ Will leave this here in case we want to expand search by age range and specify p
 
     <button id="submit-attributes">Submit Attributes</button>
         </section> -->
-
-
-        
-<!-- ---------BELOW-----------
-Feeline Lucky? card to be replaced by random trail API
---------------BELOW----------- -->
-        <section class="feeline-lucky-card">
-            <figure>
-                <img src="https://cdn.vox-cdn.com/thumbor/9qJ3zWkhkIPQXOrScmOsFq5BwCg=/0x0:6000x4000/1200x900/filters:focal(2520x1520:3480x2480)/cdn.vox-cdn.com/uploads/chorus_image/image/57008903/shutterstock_1356281234.18.jpg"
-                    alt="hiking trail"
-                    width="400px">
-                    <figcaption><button>find hiking trail</button></figcaption>
-            </figure>
-            <div id="hiking-results"></div>
-        </section>
-      </div>
 
  <!-- 
     <section class="choose-attributes">
@@ -308,54 +221,29 @@ Feeline Lucky? card to be replaced by random trail API
     </section> -->
 
     <section class="text-gray-600 body-font">
-        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-          <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://api.brusselstimes.com/wp-content/uploads/2022/11/fd746706-flossie-getting-pets_tcm25-726775.jpg">
-          <div class="text-center lg:w-2/3 w-full">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" id="petName">Meet Tammy!</h1>
-            <p class="mb-8 leading-relaxed" id="petBio">Hi I'm Tammy! I'm old. Please adopt me!</p>
+        <div class="container mx-auto flex px-3 py-20 items-center justify-center flex-col">
+          <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-4 object-cover object-center rounded" alt="hero" src="https://cdn.vox-cdn.com/thumbor/9qJ3zWkhkIPQXOrScmOsFq5BwCg=/0x0:6000x4000/1200x900/filters:focal(2520x1520:3480x2480)/cdn.vox-cdn.com/uploads/chorus_image/image/57008903/shutterstock_1356281234.18.jpg"><div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" id="petName">Feeline Adventurous?</h1>
+            <figcaption><button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Click for Trails!</button></figcaption>
             <div class="flex justify-center">
-              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Adopt me!</button>
             </div>
           </div>
         </div>
       </section>
 
       <table id="table"></table>
-     
-
-
-<!-- ---------BELOW-----------
-Button IDs to search Pet Type
---------------BELOW----------- -->
-    <main>
-        <button id="senior-dog-btn">Senior Dogs</button>
-        <button id="senior-cat-btn">Senior Cats</button>
-        <button id="special-needs-cat-btn">Special Needs Cats</button>
-        <button id="special-needs-dog-btn">Special Needs Dogs</button>
-
-
-<!-- ---------BELOW-----------
-Empty table that will have API results appended into it by petAPI.js
---------------BELOW----------- -->
-        <table id="table">
-        </table>
-    </main>
-    
-
-<!-- ---------BELOW-----------
-Reminder to make contact form
-If possible, it would be a better User Experience if user could access adoption form inside the pet's bio
---------------BELOW----------- -->
-    <section class="adoption-form-contact">
-        <h3>See an animal you love?</h3>
-        <form>
-            <input type="button" name="submit" value="Take me to the application!">
-        </form>
-        <h3>Contact Us! 555-555-5555 | werock@sodoyou.com</h3>
-    </section>
 
     <footer>
-        <h4>`"You can't buy love but you can rescue it."` -Anonymous</h4>
+        <section class="adoption-form-contact">
+            <h3>See an animal you love?</h3>
+            <form>
+                <div class="container mx-auto flex px-2 py-2 items-center justify-center flex-col">
+                <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Apply Here!</button>
+                </div>
+            </form>
+            <h3>Contact Us! 1-800-7PURINA | <a href = mailto:https://www.petfinder.com/contact/>Email Us Here!</h3>
+        </section>
+            <h4>`"You can't buy love but you can rescue it."` -Anonymous</h4>
     </footer>
 
     <script src="./assets/petAPI.js"></script>
