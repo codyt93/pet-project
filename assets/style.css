@@ -24,7 +24,14 @@ section p {
   text-align: center;
 }
 
-section h2 {
+section h2, h3, h4 {
+  font-family: 'DynaPuff', cursive;
+  text-align: center;
+}
+
+/* Featured Pet Bios */
+.featured-pet-bio {
+    font-size: 1rem;
     font-family: 'DynaPuff', cursive;
     text-align: center;
 }
