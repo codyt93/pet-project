@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+      </style>
     <link rel="stylesheet" href="./assets/style.css">
 <!-- ---------BELOW-----------
 script tags go on the bottom of page.
@@ -55,8 +61,30 @@ it messes up the order of operations for other algorithms up here
         <h1>Scraggily Pets</h1>
         <h2>Scragglier the petter!</h2>
     </header> --> 
-
+    <main>
         <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            <!--Card 1-->
+            <div class="rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="http://placekitten.com/300/300" alt="Mountain">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2" id="featuredPet">Featured Pet!</div>
+                    <p class="text-gray-700 text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                    </p>
+                </div>
+                <div class="px-6 pt-4 pb-2"></div>
+            </div>
+            <!--Card 2-->
+            <div class="rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="http://placekitten.com/300/300" alt="River">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2" id="featuredPet">Featured Pet!</div>
+                    <p class="text-gray-700 text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                    </p>
+                </div>
+                <div class="px-6 pt-4 pb-2"></div>
+            </div>
         
         
             <!--Card 1-->
@@ -103,7 +131,7 @@ Took out placekitten image so API results could display
 --------------BELOW----------- -->
                 <!-- <img class="w-full" src="http://placekitten.com/300/300" alt="River"> -->
                 <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">Featured Pet!</div>
+                    <div class="font-bold text-xl mb-2" id="featuredPet">Featured Pet!</div>
                     <p class="text-gray-700 text-base">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
                     </p>
@@ -170,16 +198,13 @@ Will leave this here in case we want to expand search by age range and specify p
                 <option value="senior">7+ years</option>
         </select><br>
 
-    <input type="radio" id="color-black" name="attribute">
-    <label for="coloring">Black Beauties</label><br>
-
     <input type="radio" id="extra-tlc" name="attribute">
     <label for="tlc">Extra TLC</label><br>
 
     <input type="radio" id="uniquely-abled" name="attribute">
     <label for="abled">Uniquely Abled</label><br>
 
-    <button id="submit-attributes">Submit Attributes</button>
+    <button class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
         </section>
         <section>
             <p>Kitters!</p>
@@ -192,9 +217,6 @@ Will leave this here in case we want to expand search by age range and specify p
                 <option value="adult">1 - 6 years</option>
                 <option value="senior">7+ years</option>
         </select><br>
-
-    <input type="radio" id="color-black" name="attribute">
-    <label for="coloring">Black Beauties</label><br>
 
     <input type="radio" id="extra-tlc" name="attribute">
     <label for="tlc">Extra TLC</label><br>
@@ -214,12 +236,91 @@ Feeline Lucky? card to be replaced by random trail API
             <figure>
                 <img src="https://media0.giphy.com/media/mlvseq9yvZhba/giphy.gif?cid=ecf05e47f8zv0kpnhwygmbnp73w2yuv1avj9h5wp7w9xfq48&rid=giphy.gif&ct=g"
                     alt="cute kitten">
-                    <figcaption><button>Feeline Lucky?</button></figcaption>
-            </figure>
+                </figure>
+                <button class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg">Feeline Lucky?</button>
         </section>
       </div>
 
-    
+ <!-- 
+    <section class="choose-attributes">
+        <form>
+            <fieldset>
+                <legend>Dogsies</legend>
+
+                <input type="radio" id="age-range" name="attribute">
+                <label for="ages">Age Range</label><br>
+                    <select id="age-select">
+                        <option value="">--choose pet age--</option>
+                            <option value="baby">0-6 months</option>
+                            <option value="young">6 months - 1 year</option>
+                            <option value="adult">1 - 6 years</option>
+                            <option value="senior">7+ years</option>
+                    </select><br>
+
+                <input type="radio" id="color-black" name="attribute">
+                <label for="coloring">Black Beauties</label><br>
+
+                <input type="radio" id="extra-tlc" name="attribute">
+                <label for="tlc">Extra TLC</label><br>
+
+                <input type="radio" id="uniquely-abled" name="attribute">
+                <label for="abled">Uniquely Abled</label><br>
+
+                <button id="submit-attributes">Submit Attributes</button>
+            </fieldset>
+        </form>
+
+            <fieldset>
+                <legend>Kitters</legend>
+
+                <input type="radio" id="age-range" name="attribute">
+                <label for="ages">Age Range</label><br>
+                <select id="age-select">
+                    <option value="">--choose pet age--</option>
+                        <option value="baby">0-6 months</option>
+                        <option value="young">6 months - 1 year</option>
+                        <option value="adult">1 - 6 years</option>
+                        <option value="senior">7+ years</option>
+                </select><br>
+
+                <input type="radio" id="color-black" name="attribute">
+                <label for="coloring">Black Beauties</label><br>
+
+                <input type="radio" id="extra-tlc" name="attribute">
+                <label for="tlc">Extra TLC</label><br>
+
+                <input type="radio" id="uniquely-abled" name="attribute">
+                <label for="abled">Uniquely Abled</label><br>
+
+                <button id="submit-attributes">Submit Attributes</button>
+            </fieldset>
+
+            <section class="feeline-lucky-card">
+                <figure>
+                    <img src="https://media0.giphy.com/media/mlvseq9yvZhba/giphy.gif?cid=ecf05e47f8zv0kpnhwygmbnp73w2yuv1avj9h5wp7w9xfq48&rid=giphy.gif&ct=g"
+                        alt="cute kitten">
+                        <figcaption><button>Feeline Lucky?</button></figcaption>
+                </figure>
+            </section>
+        </form>
+    </section> -->
+
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+          <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://api.brusselstimes.com/wp-content/uploads/2022/11/fd746706-flossie-getting-pets_tcm25-726775.jpg">
+          <div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" id="petName">Meet Tammy!</h1>
+            <p class="mb-8 leading-relaxed" id="petBio">Hi I'm Tammy! I'm old. Please adopt me!</p>
+            <div class="flex justify-center">
+              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Adopt me!</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <table id="table"></table>
+     
+
 
 <!-- ---------BELOW-----------
 Button IDs to search Pet Type
@@ -250,7 +351,6 @@ If possible, it would be a better User Experience if user could access adoption 
         </form>
         <h3>Contact Us! 555-555-5555 | werock@sodoyou.com</h3>
     </section>
-
 
     <footer>
         <h4>`"You can't buy love but you can rescue it."` -Anonymous</h4>
