@@ -96,8 +96,7 @@ function fetchFeaturedPet1() {
 
           featuredPetName.textContent = data.animals[i].name;
           featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-          featuredPetPic.setAttribute("width", "600");
-          featuredPetPic.setAttribute("height", "600");
+          featuredPetPic.classList.add("featured-pet-pics");
 
           featuredCard1.appendChild(featuredPetPic);
           featuredCard1.appendChild(featuredPetName);
@@ -132,8 +131,7 @@ function fetchFeaturedPet1() {
   
             featuredPetName.textContent = data.animals[i].name;
             featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-            featuredPetPic.setAttribute("width", "600");
-            featuredPetPic.setAttribute("height", "600");
+            featuredPetPic.classList.add("featured-pet-pics");
   
             featuredCard2.appendChild(featuredPetPic);
             featuredCard2.appendChild(featuredPetName);
@@ -168,8 +166,7 @@ function fetchFeaturedPet1() {
       
                 featuredPetName.textContent = data.animals[i].name;
                 featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-                featuredPetPic.setAttribute("width", "600");
-                featuredPetPic.setAttribute("height", "600");
+                featuredPetPic.classList.add("featured-pet-pics");
       
                 featuredCard3.appendChild(featuredPetPic);
                 featuredCard3.appendChild(featuredPetName);
@@ -185,7 +182,7 @@ function clearTable() {
   var petInfoTable = document.getElementById("table");
   petInfoTable.innerHTML = "";
 }
-  
+
 
 // --------------BELOW-----------
 // Step 1: Pulling the search button for pet type in from HTML 
@@ -215,11 +212,18 @@ function fetchSeniorDog(event) {
           var returnedData = data.animals[i];
           var petPic = document.createElement("img")
           var petName = document.createElement("h3");
+          // if (bio exists)
+          // create element
+          // filter bio bio
+          // append
+          // orrrrrrr... append bio and set bio text to "No bio found"
           var petBio = document.createElement("p");
-
-
+          var bio = data.animals[i].description
+          var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+          console.log(bio)
+          console.log(filterBio)
           petName.textContent = data.animals[i].name;
-          petBio.textContent = data.animals[i].description;
+          petBio.textContent = filterBio
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
 
           petInfoTable.appendChild(petName);
@@ -228,8 +232,6 @@ function fetchSeniorDog(event) {
                           // how can I omit bios that have special characters?
 
                           // how can I omit names that have too many characters?
-
-          // console.log(returnedData);
         }
       })
     }
