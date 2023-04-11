@@ -28,8 +28,6 @@ function fetchDogLocation(zip){
 
 
 
-
-
 var petInfoTable = document.getElementById("table");
 
 
@@ -49,16 +47,30 @@ function retrieveToken()  {
   // fetchSeniorDog();
   // fetchSeniorCat();
   // fetchSpecialNeedsCat();
-  fetchSpecialNeedsDog();
+  // fetchSpecialNeedsDog();
 })
 }
 
 retrieveToken();
 
+function clearTable() {
+  console.log("boop!")
+
+  var petInfoTable = document.getElementById("table");
+  petInfoTable.innerHTML = "";
+}
+  
+  
+
+
+var seniorDogBtn = document.getElementById("senior-dog-btn");
 
 
 
-function fetchSeniorDog() {
+function fetchSeniorDog(event) {
+
+  clearTable();
+
   fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior",{
     headers:{
       Authorization:`Bearer ${token}`
@@ -91,11 +103,19 @@ function fetchSeniorDog() {
       })
     }
 
+seniorDogBtn.addEventListener("click", fetchSeniorDog);
 
 
 
+
+
+
+var seniorCatBtn = document.getElementById("senior-cat-btn");
 
 function fetchSeniorCat() {
+
+  clearTable();
+
   fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior",{
     headers:{
       Authorization:`Bearer ${token}`
@@ -128,10 +148,18 @@ function fetchSeniorCat() {
       })
     }
 
+    seniorCatBtn.addEventListener("click", fetchSeniorCat);
 
 
+
+
+
+    var specialNeedsCatBtn = document.getElementById("special-needs-cat-btn");
 
 function fetchSpecialNeedsCat() {
+
+  clearTable();
+
   fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&special_needs=1",{
     headers:{
       Authorization:`Bearer ${token}`
@@ -164,10 +192,17 @@ function fetchSpecialNeedsCat() {
       })
     }
 
+    specialNeedsCatBtn.addEventListener("click", fetchSpecialNeedsCat);
 
 
+
+
+    var specialNeedsDogBtn = document.getElementById("special-needs-dog-btn");
 
 function fetchSpecialNeedsDog() {
+
+  clearTable();
+  
   fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&special_needs=1",{
     headers:{
       Authorization:`Bearer ${token}`
@@ -200,6 +235,7 @@ function fetchSpecialNeedsDog() {
       })
     }
 
+    specialNeedsDogBtn.addEventListener("click", fetchSpecialNeedsDog);
 
 
 
@@ -236,7 +272,4 @@ function fetchSpecialNeedsDog() {
 //   fetchDog(data.access_token)
 //   fetchDogLocation(data.access_token,"98258")
 // })
-
-
-
 
