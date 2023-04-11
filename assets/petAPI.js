@@ -90,16 +90,24 @@ function fetchFeaturedPet1() {
       .then(function (data) {
         for (var i = 0; i < data.animals.length; i++) {
 
-          var returnedFeaturedPet = data.animals[i];
-          var featuredPetName = document.createElement("h3");
+          // var returnedFeaturedPet = data.animals[i];
           var featuredPetPic = document.createElement("img");
+          var featuredPetName = document.createElement("h3");
+          var featuredPetBio = document.createElement("p");
 
           featuredPetName.textContent = data.animals[i].name;
           featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-          featuredPetPic.classList.add("featured-pet-pics");
+          featuredPetBio.textContent = data.animals[i].description;
 
+          featuredPetPic.classList.add("featured-pet-pics");
+          featuredPetName.classList.add("featured-pet-name");
+          featuredPetBio.classList.add("featured-pet-bio");
+// --------------BELOW-----------
+// Since created elements are being manipulated by CSS by adding class, do we still need these?
+// --------------BELOW-----------
           featuredCard1.appendChild(featuredPetPic);
           featuredCard1.appendChild(featuredPetName);
+          featuredCard1.appendChild(featuredPetBio);
         }
       })
     }
@@ -114,30 +122,38 @@ function fetchFeaturedPet1() {
 // Step 6: Within the loop: Create Element, Add Content, Append to Page
 // Step 7: Appended data to individual card by ID
 // --------------BELOW-----------
-    function fetchFeaturedPet2() {
-    fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
-      headers:{
-        Authorization:`Bearer ${token}`
+function fetchFeaturedPet2() {
+fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
+  headers:{
+    Authorization:`Bearer ${token}`
+  }
+}).then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      for (var i = 0; i < data.animals.length; i++) {
+
+        var returnedFeaturedPet = data.animals[i];
+        var featuredPetPic = document.createElement("img");
+        var featuredPetName = document.createElement("h3");
+        var featuredPetBio = document.createElement("p");
+
+        featuredPetName.textContent = data.animals[i].name;
+        featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+        featuredPetBio.textContent = data.animals[i].description;
+
+        featuredPetPic.classList.add("featured-pet-pics");
+        featuredPetName.classList.add("featured-pet-name");
+        featuredPetBio.classList.add("featured-pet-bio");
+// --------------BELOW-----------
+// Since created elements are being manipulated by CSS by adding class, do we still need these?
+// --------------BELOW-----------
+        featuredCard1.appendChild(featuredPetPic);
+        featuredCard1.appendChild(featuredPetName);
+        featuredCard1.appendChild(featuredPetBio);
       }
-    }).then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          for (var i = 0; i < data.animals.length; i++) {
-  
-            var returnedFeaturedPet = data.animals[i];
-            var featuredPetName = document.createElement("h3");
-            var featuredPetPic = document.createElement("img");
-  
-            featuredPetName.textContent = data.animals[i].name;
-            featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-            featuredPetPic.classList.add("featured-pet-pics");
-  
-            featuredCard2.appendChild(featuredPetPic);
-            featuredCard2.appendChild(featuredPetName);
-          }
-        })
-    }
+    })
+}
 
 
 // --------------BELOW-----------
@@ -149,30 +165,38 @@ function fetchFeaturedPet1() {
 // Step 6: Within the loop: Create Element, Add Content, Append to Page
 // Step 7: Appended data to individual card by ID
 // --------------BELOW-----------
-    function fetchFeaturedPet3() {
-        fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
-          headers:{
-            Authorization:`Bearer ${token}`
+function fetchFeaturedPet3() {
+    fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    }).then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          for (var i = 0; i < data.animals.length; i++) {
+  
+            var returnedFeaturedPet = data.animals[i];
+            var featuredPetPic = document.createElement("img");
+            var featuredPetName = document.createElement("h3");
+            var featuredPetBio = document.createElement("p");
+  
+            featuredPetName.textContent = data.animals[i].name;
+            featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+            featuredPetBio.textContent = data.animals[i].description;
+  
+            featuredPetPic.classList.add("featured-pet-pics");
+            featuredPetName.classList.add("featured-pet-name");
+            featuredPetBio.classList.add("featured-pet-bio");
+  // --------------BELOW-----------
+  // Since created elements are being manipulated by CSS by adding class, do we still need these?
+  // --------------BELOW-----------
+            featuredCard1.appendChild(featuredPetPic);
+            featuredCard1.appendChild(featuredPetName);
+            featuredCard1.appendChild(featuredPetBio);
           }
-        }).then(function (response) {
-              return response.json();
-            })
-            .then(function (data) {
-              for (var i = 0; i < data.animals.length; i++) {
-      
-                var returnedFeaturedPet = data.animals[i];
-                var featuredPetName = document.createElement("h3");
-                var featuredPetPic = document.createElement("img");
-      
-                featuredPetName.textContent = data.animals[i].name;
-                featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-                featuredPetPic.classList.add("featured-pet-pics");
-      
-                featuredCard3.appendChild(featuredPetPic);
-                featuredCard3.appendChild(featuredPetName);
-              }
-            })
-          }
+        })
+      }
 
 
 // --------------BELOW-----------
