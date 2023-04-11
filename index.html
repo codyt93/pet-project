@@ -11,11 +11,6 @@
         @import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
       </style>
     <link rel="stylesheet" href="./assets/style.css">
-<!-- ---------BELOW-----------
-script tags go on the bottom of page.
-it messes up the order of operations for other algorithms up here
---------------BELOW----------- -->
-<!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Document</title>
 </head>
 
@@ -83,32 +78,15 @@ it messes up the order of operations for other algorithms up here
         </div>
 
 <!-- ---------BELOW-----------
-Button IDs to search Pet Type
---------------BELOW----------- -->
-<main>
-    <div class="flex justify-center"></div>
-    <button id="senior-dog-btn">Senior Dogs</button>
-    <button id="senior-cat-btn">Senior Cats</button>
-    <button id="special-needs-cat-btn">Special Needs Cats</button>
-    <button id="special-needs-dog-btn">Special Needs Dogs</button>
-
-<!-- ---------BELOW-----------
-Empty table that will have API results appended into it by petAPI.js
---------------BELOW----------- -->
-    <table id="table">
-    </table>
-</main>
-
-<!-- ---------BELOW-----------
 Might get search by zip code working
 --------------BELOW----------- -->
-    <section class="location-search-bar"id="loco">
+    <!-- <section class="location-search-bar"id="loco">
         <form>
             <label for="location-entry">Enter Zip Code to Search Nearby Pets</label>
             <input type="text" id="locale" name="user-locale"/>
             <button type="submit">Search</button>
         </form>
-    </section>
+    </section> -->
 
 <!-- ---------BELOW-----------
 Will leave this here in case we want to expand search by age range and specify physical vs. medical needs
@@ -231,8 +209,6 @@ Will leave this here in case we want to expand search by age range and specify p
         </div>
       </section>
 
-      <table id="table"></table>
-     
 
 
 <!-- ---------BELOW-----------
@@ -243,6 +219,7 @@ Button IDs to search Pet Type
         <button id="senior-cat-btn">Senior Cats</button>
         <button id="special-needs-cat-btn">Special Needs Cats</button>
         <button id="special-needs-dog-btn">Special Needs Dogs</button>
+        <br>
 
 
 <!-- ---------BELOW-----------
@@ -254,7 +231,6 @@ Empty table that will have API results appended into it by petAPI.js
     
 
 <!-- ---------BELOW-----------
-Reminder to make contact form
 If possible, it would be a better User Experience if user could access adoption form inside the pet's bio
 --------------BELOW----------- -->
     <section class="adoption-form-contact"id="contact">
