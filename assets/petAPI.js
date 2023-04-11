@@ -1,0 +1,387 @@
+var apiKey = "h4wf8DBUeKwOsqWiLWoU7VN06DEPb7llyE8Sk3Stb1Kyr5ecda"
+var secret = "KMjhTXuUMtsH7IsUq6eKKcWUkTGBA5JbrHCgil4R"
+var petDistance = document.getElementById ("petDistance")
+var enterLocation = document.getElementById ("locale")
+var token;
+
+
+// --------------BELOW-----------
+// might be able to search by zip code
+// --------------BELOW-----------
+
+// function fetchDogLocation(zip){
+//     fetch("https://api.petfinder.com/v2/animals?location=" + zip,{
+//       headers:{
+//         Authorization:`Bearer ${token}`
+//       }
+//     }).then(res => res.json())
+//     .then(data => {
+//       console.log(data)
+//     })
+//   }
+
+  // petDistance.addEventListener("click", function (event){
+  //   event.preventDefault ()
+  //   fetchDogLocation(token, enterLocation.value)
+  // })
+
+
+
+
+
+// --------------BELOW-----------
+// pulling in an empty table from HTML
+// --------------BELOW-----------
+var petInfoTable = document.getElementById("table");
+
+
+// --------------BELOW-----------
+// Setting our Petfinder API credentials to be called
+// --------------BELOW-----------
+function retrieveToken()  {
+  return fetch("https://api.petfinder.com/v2/oauth2/token", {
+    body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    method: "POST"
+})
+.then(function (response) {
+  return response.json();
+})
+.then(function (data) {
+  // this where we access the token for later
+  token=data.access_token
+
+  fetchFeaturedPet1();
+  fetchFeaturedPet2();
+  fetchFeaturedPet3();
+})
+}
+
+retrieveToken();
+
+
+// --------------BELOW-----------
+// pulling each individual card by ID to alleviate confusion with multiple classes in HTML
+// --------------BELOW-----------
+var featuredCard1 = document.getElementById("card1")
+var featuredCard2 = document.getElementById("card2")
+var featuredCard3 = document.getElementById("card3")
+
+
+// --------------BELOW-----------
+// Step 1: Created function in order to call later inside the retrieveToken() function
+// Step 2: Fetched singular random pet that is both senior and special needs
+// Step 3: Looping over data
+// Step 4: Creating <h3> element of pet's name
+// Step 5: Creating <img> element of pet
+// Step 6: Within the loop: Create Element, Add Content, Append to Page
+// Step 7: Appended data to individual card by ID
+// --------------BELOW-----------
+function fetchFeaturedPet1() {
+  fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
+    headers:{
+      Authorization:`Bearer ${token}`
+    }
+  }).then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        for (var i = 0; i < data.animals.length; i++) {
+
+          var returnedFeaturedPet = data.animals[i];
+          var featuredPetName = document.createElement("h3");
+          var featuredPetPic = document.createElement("img");
+
+          featuredPetName.textContent = data.animals[i].name;
+          featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+          featuredPetPic.setAttribute("width", "600");
+          featuredPetPic.setAttribute("height", "600");
+
+          featuredCard1.appendChild(featuredPetPic);
+          featuredCard1.appendChild(featuredPetName);
+        }
+      })
+    }
+
+
+    // --------------BELOW-----------
+// Step 1: Created function in order to call later inside the retrieveToken() function
+// Step 2: Fetched singular random pet that is both senior and special needs
+// Step 3: Looping over data
+// Step 4: Creating <h3> element of pet's name
+// Step 5: Creating <img> element of pet
+// Step 6: Within the loop: Create Element, Add Content, Append to Page
+// Step 7: Appended data to individual card by ID
+// --------------BELOW-----------
+    function fetchFeaturedPet2() {
+    fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    }).then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          for (var i = 0; i < data.animals.length; i++) {
+  
+            var returnedFeaturedPet = data.animals[i];
+            var featuredPetName = document.createElement("h3");
+            var featuredPetPic = document.createElement("img");
+  
+            featuredPetName.textContent = data.animals[i].name;
+            featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+            featuredPetPic.setAttribute("width", "600");
+            featuredPetPic.setAttribute("height", "600");
+  
+            featuredCard2.appendChild(featuredPetPic);
+            featuredCard2.appendChild(featuredPetName);
+          }
+        })
+    }
+
+
+// --------------BELOW-----------
+// Step 1: Created function in order to call later inside the retrieveToken() function
+// Step 2: Fetched singular random pet that is both senior and special needs
+// Step 3: Looping over data
+// Step 4: Creating <h3> element of pet's name
+// Step 5: Creating <img> element of pet
+// Step 6: Within the loop: Create Element, Add Content, Append to Page
+// Step 7: Appended data to individual card by ID
+// --------------BELOW-----------
+    function fetchFeaturedPet3() {
+        fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&special_needs=1&limit=1",{
+          headers:{
+            Authorization:`Bearer ${token}`
+          }
+        }).then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              for (var i = 0; i < data.animals.length; i++) {
+      
+                var returnedFeaturedPet = data.animals[i];
+                var featuredPetName = document.createElement("h3");
+                var featuredPetPic = document.createElement("img");
+      
+                featuredPetName.textContent = data.animals[i].name;
+                featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+                featuredPetPic.setAttribute("width", "600");
+                featuredPetPic.setAttribute("height", "600");
+      
+                featuredCard3.appendChild(featuredPetPic);
+                featuredCard3.appendChild(featuredPetName);
+              }
+            })
+          }
+
+
+// --------------BELOW-----------
+// creating function to clear the table as soon as search for pet type button is clicked
+// --------------BELOW-----------
+function clearTable() {
+  var petInfoTable = document.getElementById("table");
+  petInfoTable.innerHTML = "";
+}
+  
+
+// --------------BELOW-----------
+// Step 1: Pulling the search button for pet type in from HTML 
+// Step 2: Creating function to run when Pet Type search button is clicked
+// Step 3: Calling function to clear table upon click
+// Step 4: Fetching data
+// Step 5: Looping over data 
+// Step 6: Within the loop: Create Element, Add Content, Append to Page
+// Step 7: Declared a click event listener to run the fetch
+// --------------BELOW-----------
+var seniorDogBtn = document.getElementById("senior-dog-btn");
+
+function fetchSeniorDog(event) {
+
+  clearTable();
+
+  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior",{
+    headers:{
+      Authorization:`Bearer ${token}`
+    }
+  }).then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        for (var i = 0; i < data.animals.length; i++) {
+
+          var returnedData = data.animals[i];
+          var petPic = document.createElement("img")
+          var petName = document.createElement("h3");
+          var petBio = document.createElement("p");
+
+
+          petName.textContent = data.animals[i].name;
+          petBio.textContent = data.animals[i].description;
+          petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+
+          petInfoTable.appendChild(petName);
+          petInfoTable.appendChild(petPic);
+          petInfoTable.appendChild(petBio);
+                          // how can I omit bios that have special characters?
+
+                          // how can I omit names that have too many characters?
+
+          // console.log(returnedData);
+        }
+      })
+    }
+
+seniorDogBtn.addEventListener("click", fetchSeniorDog);
+
+
+// --------------BELOW-----------
+// Step 1: pulling the search button for pet type in from HTML 
+// Step 2: creating function to run when Pet Type search button is clicked
+// Step 3: calling function to clear table upon click
+// Step 4: Fetching data
+// Step 5: Looping over data 
+// Step 6: Within the loop: Create Element, Add Content, Append to Page
+// Step 7: Declared a click event listener to run the fetch
+// --------------BELOW-----------
+var seniorCatBtn = document.getElementById("senior-cat-btn");
+
+function fetchSeniorCat() {
+
+  clearTable();
+
+  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior",{
+    headers:{
+      Authorization:`Bearer ${token}`
+    }
+  }).then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        for (var i = 0; i < data.animals.length; i++) {
+
+          var returnedData = data.animals[i];
+          var petPic = document.createElement("img")
+          var petName = document.createElement("h3");
+          var petBio = document.createElement("p");
+
+
+          petName.textContent = data.animals[i].name;
+          petBio.textContent = data.animals[i].description;
+          petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+
+          petInfoTable.appendChild(petName);
+          petInfoTable.appendChild(petPic);
+          petInfoTable.appendChild(petBio);
+                          // how can I omit bios that have special characters?
+
+                          // how can I omit names that have too many characters?
+
+          // console.log(returnedData);
+        }
+      })
+    }
+
+    seniorCatBtn.addEventListener("click", fetchSeniorCat);
+
+
+// --------------BELOW-----------
+// Step 1: pulling the search button for pet type in from HTML 
+// Step 2: creating function to run when Pet Type search button is clicked
+// Step 3: calling function to clear table upon click
+// Step 4: Fetching data
+// Step 5: Looping over data 
+// Step 6: Within the loop: Create Element, Add Content, Append to Page
+// Step 7: Declared a click event listener to run the fetch
+// --------------BELOW-----------
+var specialNeedsCatBtn = document.getElementById("special-needs-cat-btn");
+
+function fetchSpecialNeedsCat() {
+
+  clearTable();
+
+  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&special_needs=1",{
+    headers:{
+      Authorization:`Bearer ${token}`
+    }
+  }).then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        for (var i = 0; i < data.animals.length; i++) {
+
+          var returnedData = data.animals[i];
+          var petPic = document.createElement("img")
+          var petName = document.createElement("h3");
+          var petBio = document.createElement("p");
+
+
+          petName.textContent = data.animals[i].name;
+          petBio.textContent = data.animals[i].description;
+          petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+
+          petInfoTable.appendChild(petName);
+          petInfoTable.appendChild(petPic);
+          petInfoTable.appendChild(petBio);
+                          // how can I omit bios that have special characters?
+
+                          // how can I omit names that have too many characters?
+
+          // console.log(returnedData);
+        }
+      })
+    }
+
+    specialNeedsCatBtn.addEventListener("click", fetchSpecialNeedsCat);
+
+
+// --------------BELOW-----------
+// Step 1: pulling the search button for pet type in from HTML 
+// Step 2: creating function to run when Pet Type search button is clicked
+// Step 3: calling function to clear table upon click
+// Step 4: Fetching data
+// Step 5: Looping over data 
+// Step 6: Within the loop: Create Element, Add Content, Append to Page
+// Step 7: Declared a click event listener to run the fetch
+// --------------BELOW-----------
+var specialNeedsDogBtn = document.getElementById("special-needs-dog-btn");
+
+function fetchSpecialNeedsDog() {
+
+  clearTable();
+  
+  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&special_needs=1",{
+    headers:{
+      Authorization:`Bearer ${token}`
+    }
+  }).then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        for (var i = 0; i < data.animals.length; i++) {
+
+          var returnedData = data.animals[i];
+          var petPic = document.createElement("img")
+          var petName = document.createElement("h3");
+          var petBio = document.createElement("p");
+
+
+          petName.textContent = data.animals[i].name;
+          petBio.textContent = data.animals[i].description;
+          petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+
+          petInfoTable.appendChild(petName);
+          petInfoTable.appendChild(petPic);
+          petInfoTable.appendChild(petBio);
+                          // how can I omit bios that have special characters?
+
+                          // how can I omit names that have too many characters?
+
+          // console.log(returnedData);
+        }
+      })
+    }
+
+    specialNeedsDogBtn.addEventListener("click", fetchSpecialNeedsDog);
