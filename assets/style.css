@@ -23,6 +23,12 @@ section p {
   font-family: 'DynaPuff', cursive;
   text-align: center;
 }
+
+section h2 {
+    font-family: 'DynaPuff', cursive;
+    text-align: center;
+}
+
  /* hamburger & burger list styling */
 .circlecheck {
   display: none;
