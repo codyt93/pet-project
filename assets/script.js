@@ -99,10 +99,10 @@ function fetchSeniorDog() {
           petBio.textContent = data.animals[i].description;
           // how get images to show? It's in an array
           // Image.src = data.animals[i].photos[0].medium;
-          // petPic.setAttribute("img", data.animals[i].primary_photo_cropped);
+          petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
 
-          petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petName);
+          petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
                           // how can I omit bios that have special characters?
 
