@@ -48,8 +48,8 @@ function retrieveToken()  {
   token=data.access_token
   // fetchSeniorDog();
   // fetchSeniorCat();
-  fetchSpecialNeedsCat();
-  // fetchSpecialNeedsDog();
+  // fetchSpecialNeedsCat();
+  fetchSpecialNeedsDog();
 })
 }
 
