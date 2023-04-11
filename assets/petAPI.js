@@ -236,26 +236,35 @@ function fetchSeniorDog(event) {
 
           var petPic = document.createElement("img")
           var petName = document.createElement("h3");
+          var petBio = document.createElement("p");
+          var petUrl = document.createElement("a");
+          // var bio = data.animals[i].description
+          // var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+          // petBio.textContent = filterBio
           // if (bio exists)
           // create element
           // filter bio bio
           // append
           // orrrrrrr... append bio and set bio text to "No bio found"
-          var petBio = document.createElement("p");
-          var bio = data.animals[i].description
-          var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
           // console.log(bio)
           // console.log(filterBio)
+          
           petName.textContent = data.animals[i].name;
-          petBio.textContent = filterBio
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+          petBio.textContent = data.animals[i].description;
+          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.href = data.animals[i].url;
+          petUrl.setAttribute("target", "_blank");
 
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
+          petInfoTable.appendChild(petUrl);
                           // how can I omit bios that have special characters?
 
                           // how can I omit names that have too many characters?
+
+          console.log(data.animals[i]);
         }
       })
     }
@@ -291,15 +300,20 @@ function fetchSeniorCat() {
           var petPic = document.createElement("img")
           var petName = document.createElement("h3");
           var petBio = document.createElement("p");
+          var petUrl = document.createElement("a");
 
 
           petName.textContent = data.animals[i].name;
-          petBio.textContent = data.animals[i].description;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+          petBio.textContent = data.animals[i].description;
+          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.href = data.animals[i].url;
+          petUrl.setAttribute("target", "_blank");
 
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
+          petInfoTable.appendChild(petUrl);
 
                           // how can I omit names that have too many characters?
 
@@ -339,15 +353,20 @@ function fetchSpecialNeedsCat() {
           var petPic = document.createElement("img")
           var petName = document.createElement("h3");
           var petBio = document.createElement("p");
+          var petUrl = document.createElement("a");
 
 
           petName.textContent = data.animals[i].name;
-          petBio.textContent = data.animals[i].description;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+          petBio.textContent = data.animals[i].description;
+          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.href = data.animals[i].url;
+          petUrl.setAttribute("target", "_blank");
 
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
+          petInfoTable.appendChild(petUrl);
 
                           // how can I omit names that have too many characters?
 
@@ -387,15 +406,20 @@ function fetchSpecialNeedsDog() {
           var petPic = document.createElement("img")
           var petName = document.createElement("h3");
           var petBio = document.createElement("p");
+          var petUrl = document.createElement("a");
 
 
           petName.textContent = data.animals[i].name;
-          petBio.textContent = data.animals[i].description;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
+          petBio.textContent = data.animals[i].description;
+          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.href = data.animals[i].url;
+          petUrl.setAttribute("target", "_blank");
 
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
+          petInfoTable.appendChild(petUrl);
 
                           // how can I omit names that have too many characters?
 
