@@ -113,7 +113,7 @@ function fetchFeaturedPet1() {
           featuredCard1.appendChild(featuredPetPic);
           featuredCard1.appendChild(featuredPetName);
           featuredCard1.appendChild(featuredPetBio);
-          petInfoTable.appendChild(petUrl);
+          featuredCard1.appendChild(petUrl);
         }
       })
     }
@@ -161,7 +161,7 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=9819
         featuredCard2.appendChild(featuredPetPic);
         featuredCard2.appendChild(featuredPetName);
         featuredCard2.appendChild(featuredPetBio);
-        petInfoTable.appendChild(petUrl);
+        featuredCard2.appendChild(petUrl);
       }
     })
 }
@@ -209,7 +209,7 @@ function fetchFeaturedPet3() {
             featuredCard3.appendChild(featuredPetPic);
             featuredCard3.appendChild(featuredPetName);
             featuredCard3.appendChild(featuredPetBio);
-            petInfoTable.appendChild(petUrl);
+            featuredCard3.appendChild(petUrl);
           }
         })
       }
