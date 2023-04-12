@@ -81,7 +81,7 @@ var featuredCard3 = document.getElementById("card3")
 // Step 8: Appended data to individual card by ID
 // --------------BELOW-----------
 function fetchFeaturedPet1() {
-  fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=98195&distance=100&special_needs=1&limit=1",{
+  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior&location=98195&distance=200&special_needs=1&limit=1",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -100,7 +100,7 @@ function fetchFeaturedPet1() {
           featuredPetName.textContent = data.animals[i].name;
           featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
           featuredPetBio.textContent = data.animals[i].description;
-          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.textContent = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
 
@@ -132,7 +132,7 @@ function fetchFeaturedPet1() {
 // Step 8: Appended data to individual card by ID
 // --------------BELOW-----------
 function fetchFeaturedPet2() {
-fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=98195&distance=100&special_needs=1&limit=1",{
+fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior&location=98195&distance=200&special_needs=1&limit=1",{
   headers:{
     Authorization:`Bearer ${token}`
   }
@@ -150,7 +150,7 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=9819
         featuredPetName.textContent = data.animals[i].name;
         featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
         featuredPetBio.textContent = data.animals[i].description;
-        petUrl.innerHTML = "Take me to Pet Profile";
+        petUrl.textContent = "Take me to Pet Profile";
         petUrl.href = data.animals[i].url;
         petUrl.setAttribute("target", "_blank");
 
@@ -181,7 +181,7 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=9819
 // Step 8: Appended data to individual card by ID
 // --------------BELOW-----------
 function fetchFeaturedPet3() {
-    fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=98195&distance=100&special_needs=1&limit=1",{
+    fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior&location=98195&distance=200&special_needs=1&limit=1",{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -199,7 +199,7 @@ function fetchFeaturedPet3() {
             featuredPetName.textContent = data.animals[i].name;
             featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
             featuredPetBio.textContent = data.animals[i].description;
-            petUrl.innerHTML = "Take me to Pet Profile";
+            petUrl.textContent = "Take me to Pet Profile";
             petUrl.href = data.animals[i].url;
             petUrl.setAttribute("target", "_blank");
   
@@ -244,7 +244,7 @@ function fetchSeniorDog(event) {
 
   clearTable();
 
-  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior&location=98195&distance=100",{
+  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior&location=98195&distance=200",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -268,11 +268,14 @@ function fetchSeniorDog(event) {
           // orrrrrrr... append bio and set bio text to "No bio found"
           // console.log(bio)
           // console.log(filterBio)
+          if (bio)
+
+
           
           petName.textContent = data.animals[i].name;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
           petBio.textContent = data.animals[i].description;
-          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.textContent = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
           
@@ -309,7 +312,7 @@ function fetchSeniorCat() {
 
   clearTable();
 
-  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior&location=98195&distance=100",{
+  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior&location=98195&distance=200",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -328,7 +331,7 @@ function fetchSeniorCat() {
           petName.textContent = data.animals[i].name;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
           petBio.textContent = data.animals[i].description;
-          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.textContent = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
 
@@ -363,7 +366,7 @@ function fetchSpecialNeedsCat() {
 
   clearTable();
 
-  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&special_needs=1&location=98195&distance=100",{
+  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&special_needs=1&location=98195&distance=200",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -383,7 +386,7 @@ function fetchSpecialNeedsCat() {
           petName.textContent = data.animals[i].name;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
           petBio.textContent = data.animals[i].description;
-          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.textContent = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
 
@@ -418,7 +421,7 @@ function fetchSpecialNeedsDog() {
 
   clearTable();
   
-  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&special_needs=1&location=98195&distance=100",{
+  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&special_needs=1&location=98195&distance=200",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -438,7 +441,7 @@ function fetchSpecialNeedsDog() {
           petName.textContent = data.animals[i].name;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
           petBio.textContent = data.animals[i].description;
-          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.textContent = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
 
