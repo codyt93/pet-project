@@ -169,10 +169,14 @@ section h2, h3, h4 {
     font-family: sans-serif;
 }
 
+#adoptMe {
+    font-family: 'DynaPuff', cursive;
+}
 
 .feeline-lucky-card {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    font-family: 'DynaPuff', cursive;
 }
 
