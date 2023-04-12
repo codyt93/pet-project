@@ -1,25 +1,25 @@
 var baseUrl = "https://developer.nps.gov/api/v1/activities/parks/?api_key=Be3qryBfw3ZahG9SWYAs2MtP36Zklb2VGxOl8y1p"
 var trails = document.querySelector("#hiking-results")
 
-function fetchTrails(){
-    fetch(baseUrl,  {
-      
-    }).then(res => res.json())
+function fetchTrails() {
+  fetch(baseUrl, {
+
+  }).then(res => res.json())
     .then(data => {
-      var trailResults =data.data[17].parks[72].url
-      console.log(trailResults);
-      // create element
-      var trailEl = document.createElement("a");
+      var trailResults = data.data[17]
+      var parks = trailResults.parks
+      
+      // Generate a random index
+      var randomIndex = Math.floor(Math.random() * parks.length);
+      console.log(randomIndex);
 
+      // item at the random index
+      var randomItem = parks[randomIndex];
 
-      // modify content
-      trailEl.textContent = "random hiking trail"
-      trailEl.setAttribute("href", trailResults);
+      console.log(randomItem);
 
-      // append to page
-      trails.appendChild(trailEl)
     })
-  }
+}
 
 
 fetchTrails()
