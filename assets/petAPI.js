@@ -95,10 +95,14 @@ function fetchFeaturedPet1() {
           var featuredPetPic = document.createElement("img");
           var featuredPetName = document.createElement("h3");
           var featuredPetBio = document.createElement("p");
+          var petUrl = document.createElement("a");
 
           featuredPetName.textContent = data.animals[i].name;
           featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
           featuredPetBio.textContent = data.animals[i].description;
+          petUrl.innerHTML = "Take me to Pet Profile";
+          petUrl.href = data.animals[i].url;
+          petUrl.setAttribute("target", "_blank");
 
           featuredPetPic.classList.add("featured-pet-pics");
           featuredPetName.classList.add("featured-pet-name");
@@ -109,6 +113,7 @@ function fetchFeaturedPet1() {
           featuredCard1.appendChild(featuredPetPic);
           featuredCard1.appendChild(featuredPetName);
           featuredCard1.appendChild(featuredPetBio);
+          petInfoTable.appendChild(petUrl);
         }
       })
     }
@@ -138,10 +143,14 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=9819
         var featuredPetPic = document.createElement("img");
         var featuredPetName = document.createElement("h3");
         var featuredPetBio = document.createElement("p");
+        var petUrl = document.createElement("a");
 
         featuredPetName.textContent = data.animals[i].name;
         featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
         featuredPetBio.textContent = data.animals[i].description;
+        petUrl.innerHTML = "Take me to Pet Profile";
+        petUrl.href = data.animals[i].url;
+        petUrl.setAttribute("target", "_blank");
 
         featuredPetPic.classList.add("featured-pet-pics");
         featuredPetName.classList.add("featured-pet-name");
@@ -152,6 +161,7 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=9819
         featuredCard2.appendChild(featuredPetPic);
         featuredCard2.appendChild(featuredPetName);
         featuredCard2.appendChild(featuredPetBio);
+        petInfoTable.appendChild(petUrl);
       }
     })
 }
@@ -181,10 +191,14 @@ function fetchFeaturedPet3() {
             var featuredPetPic = document.createElement("img");
             var featuredPetName = document.createElement("h3");
             var featuredPetBio = document.createElement("p");
+            var petUrl = document.createElement("a");
   
             featuredPetName.textContent = data.animals[i].name;
             featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
             featuredPetBio.textContent = data.animals[i].description;
+            petUrl.innerHTML = "Take me to Pet Profile";
+            petUrl.href = data.animals[i].url;
+            petUrl.setAttribute("target", "_blank");
   
             featuredPetPic.classList.add("featured-pet-pics");
             featuredPetName.classList.add("featured-pet-name");
@@ -195,6 +209,7 @@ function fetchFeaturedPet3() {
             featuredCard3.appendChild(featuredPetPic);
             featuredCard3.appendChild(featuredPetName);
             featuredCard3.appendChild(featuredPetBio);
+            petInfoTable.appendChild(petUrl);
           }
         })
       }
