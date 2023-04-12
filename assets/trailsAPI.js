@@ -1,6 +1,10 @@
 var baseUrl = "https://developer.nps.gov/api/v1/activities/parks/?api_key=Be3qryBfw3ZahG9SWYAs2MtP36Zklb2VGxOl8y1p"
 var trails = document.querySelector("#hiking-results")
 
+
+var trailsLink = document.querySelector("#trails-btn");
+console.log(trailsLink)
+
 function fetchTrails() {
   fetch(baseUrl, {
 
@@ -17,6 +21,9 @@ function fetchTrails() {
       var randomItem = parks[randomIndex];
 
       console.log(randomItem);
+
+
+      trailsLink.href = randomItem.url
 
     })
 }
