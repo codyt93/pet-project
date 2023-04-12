@@ -96,6 +96,7 @@ function fetchFeaturedPet1() {
           var featuredPetName = document.createElement("h3");
           var featuredPetBio = document.createElement("p");
           var petUrl = document.createElement("a");
+          
 
           featuredPetName.textContent = data.animals[i].name;
           featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
