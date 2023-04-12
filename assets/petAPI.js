@@ -96,6 +96,7 @@ function fetchFeaturedPet1() {
           var featuredPetName = document.createElement("h3");
           var featuredPetBio = document.createElement("p");
           var petUrl = document.createElement("a");
+          
 
           featuredPetName.textContent = data.animals[i].name;
           featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
@@ -151,7 +152,7 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=9819
         featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
         featuredPetBio.textContent = data.animals[i].description;
         petUrl.innerHTML = "Take me to Pet Profile";
-        petUrl.href = data.animals[i].url;
+        petUrl.href = data.animals[i].url; 
         petUrl.setAttribute("target", "_blank");
 
         featuredPetPic.classList.add("featured-pet-pics");
