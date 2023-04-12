@@ -268,7 +268,13 @@ function fetchSeniorDog(event) {
           // orrrrrrr... append bio and set bio text to "No bio found"
           // console.log(bio)
           // console.log(filterBio)
-          if (bio)
+          if (petBio) {
+            var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+            
+
+
+
+          }
 
 
           
