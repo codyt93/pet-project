@@ -107,6 +107,8 @@ function fetchFeaturedPet1() {
           featuredPetPic.classList.add("featured-pet-pics");
           featuredPetName.classList.add("featured-pet-name");
           featuredPetBio.classList.add("featured-pet-bio");
+          petUrl.classList.add("featured-pet-link")
+
 // --------------BELOW-----------
 // Since created elements are being manipulated by CSS by adding class, do we still need these?
 // --------------BELOW-----------
@@ -155,6 +157,7 @@ fetch("https://api.petfinder.com/v2/animals?sort=random&age=senior&location=9819
         featuredPetPic.classList.add("featured-pet-pics");
         featuredPetName.classList.add("featured-pet-name");
         featuredPetBio.classList.add("featured-pet-bio");
+        petUrl.classList.add("featured-pet-link")
 // --------------BELOW-----------
 // Since created elements are being manipulated by CSS by adding class, do we still need these?
 // --------------BELOW-----------
@@ -203,6 +206,8 @@ function fetchFeaturedPet3() {
             featuredPetPic.classList.add("featured-pet-pics");
             featuredPetName.classList.add("featured-pet-name");
             featuredPetBio.classList.add("featured-pet-bio");
+            petUrl.classList.add("featured-pet-link")
+
   // --------------BELOW-----------
   // Since created elements are being manipulated by CSS by adding class, do we still need these?
   // --------------BELOW-----------
@@ -270,6 +275,8 @@ function fetchSeniorDog(event) {
           petUrl.innerHTML = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
+          
+          petUrl.classList.add("searched-pet-link")
 
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
@@ -325,6 +332,8 @@ function fetchSeniorCat() {
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
 
+          petUrl.classList.add("searched-pet-link")
+
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
@@ -378,6 +387,8 @@ function fetchSpecialNeedsCat() {
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
 
+          petUrl.classList.add("searched-pet-link")
+
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
           petInfoTable.appendChild(petBio);
@@ -430,6 +441,8 @@ function fetchSpecialNeedsDog() {
           petUrl.innerHTML = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
+
+          petUrl.classList.add("searched-pet-link")
 
           petInfoTable.appendChild(petName);
           petInfoTable.appendChild(petPic);
