@@ -244,7 +244,7 @@ function fetchSeniorDog(event) {
 
   clearTable();
 
-  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior&location=98195&distance=100",{
+  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior&location=98195&distance=200",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -312,7 +312,7 @@ function fetchSeniorCat() {
 
   clearTable();
 
-  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior&location=98195&distance=100",{
+  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&age=senior&location=98195&distance=200",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -366,7 +366,7 @@ function fetchSpecialNeedsCat() {
 
   clearTable();
 
-  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&special_needs=1&location=98195&distance=100",{
+  fetch("https://api.petfinder.com/v2/animals?type=cat&sort=random&special_needs=1&location=98195&distance=200",{
     headers:{
       Authorization:`Bearer ${token}`
     }
@@ -421,7 +421,7 @@ function fetchSpecialNeedsDog() {
 
   clearTable();
   
-  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&special_needs=1&location=98195&distance=100",{
+  fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&special_needs=1&location=98195&distance=200",{
     headers:{
       Authorization:`Bearer ${token}`
     }
