@@ -184,7 +184,7 @@ section h2, h3, h4 {
     font-family: 'DynaPuff', cursive;
 }
 
-.featured-pet-link {
+.featured-pet-link, .searched-pet-link {
     font-family: 'DynaPuff', cursive;
     color:rgba(128, 0, 128);
     text-decoration: underline;

@@ -5,28 +5,6 @@ var enterLocation = document.getElementById ("locale")
 var token;
 
 
-// --------------BELOW-----------
-// might be able to search by zip code
-// --------------BELOW-----------
-
-// function fetchDogLocation(zip){
-//     fetch("https://api.petfinder.com/v2/animals?location=" + zip,{
-//       headers:{
-//         Authorization:`Bearer ${token}`
-//       }
-//     }).then(res => res.json())
-//     .then(data => {
-//       console.log(data)
-//     })
-//   }
-
-  // petDistance.addEventListener("click", function (event){
-  //   event.preventDefault ()
-  //   fetchDogLocation(token, enterLocation.value)
-  // })
-
-
-
 
 
 // --------------BELOW-----------
@@ -96,11 +74,14 @@ function fetchFeaturedPet1() {
           var featuredPetName = document.createElement("h3");
           var featuredPetBio = document.createElement("p");
           var petUrl = document.createElement("a");
-          
 
+          var bio = data.animals[i].description
+          var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+          featuredPetBio.textContent = filterBio
+          
           featuredPetName.textContent = data.animals[i].name;
           featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-          featuredPetBio.textContent = data.animals[i].description;
+          // featuredPetBio.textContent = data.animals[i].description;
           petUrl.textContent = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
@@ -148,9 +129,13 @@ fetch("https://api.petfinder.com/v2/animals?type=dog&sort=random&age=senior&loca
         var featuredPetBio = document.createElement("p");
         var petUrl = document.createElement("a");
 
+        var bio = data.animals[i].description
+        var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+        featuredPetBio.textContent = filterBio
+
         featuredPetName.textContent = data.animals[i].name;
         featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-        featuredPetBio.textContent = data.animals[i].description;
+        // featuredPetBio.textContent = data.animals[i].description;
         petUrl.textContent = "Take me to Pet Profile";
         petUrl.href = data.animals[i].url;
         petUrl.setAttribute("target", "_blank");
@@ -196,10 +181,14 @@ function fetchFeaturedPet3() {
             var featuredPetName = document.createElement("h3");
             var featuredPetBio = document.createElement("p");
             var petUrl = document.createElement("a");
+
+            var bio = data.animals[i].description
+            var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+            featuredPetBio.textContent = filterBio
   
             featuredPetName.textContent = data.animals[i].name;
             featuredPetPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-            featuredPetBio.textContent = data.animals[i].description;
+            // featuredPetBio.textContent = data.animals[i].description;
             petUrl.textContent = "Take me to Pet Profile";
             petUrl.href = data.animals[i].url;
             petUrl.setAttribute("target", "_blank");
@@ -259,26 +248,23 @@ function fetchSeniorDog(event) {
           var petName = document.createElement("h3");
           var petBio = document.createElement("p");
           var petUrl = document.createElement("a");
-          // var bio = data.animals[i].description
-          // var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
-          // petBio.textContent = filterBio
-          // if (bio exists)
-          // create element
-          // filter bio bio
-          // append
-          // orrrrrrr... append bio and set bio text to "No bio found"
-          // console.log(bio)
-          // console.log(filterBio)
-          if (bio)
 
 
+          var bio = data.animals[i].description
+          var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+          petBio.textContent = filterBio
           
           petName.textContent = data.animals[i].name;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
-          petBio.textContent = data.animals[i].description;
+          // petBio.textContent = data.animals[i].description;
           petUrl.textContent = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
+
+          // if (petBio) {
+          //   var filterBio = petBio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+          //   petBio.textContent = filterBio;
+          // } 
           
           petUrl.classList.add("searched-pet-link")
 
@@ -328,6 +314,10 @@ function fetchSeniorCat() {
           var petBio = document.createElement("p");
           var petUrl = document.createElement("a");
 
+          var bio = data.animals[i].description
+          var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+          petBio.textContent = filterBio
+
 
           petName.textContent = data.animals[i].name;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
@@ -335,6 +325,11 @@ function fetchSeniorCat() {
           petUrl.textContent = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
+
+          // if (petBio) {
+          //   var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+          //   petBio.textContent = filterBio;
+          // } 
 
           petUrl.classList.add("searched-pet-link")
 
@@ -383,6 +378,10 @@ function fetchSpecialNeedsCat() {
           var petBio = document.createElement("p");
           var petUrl = document.createElement("a");
 
+          var bio = data.animals[i].description
+          var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+          petBio.textContent = filterBio
+
 
           petName.textContent = data.animals[i].name;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
@@ -390,6 +389,11 @@ function fetchSpecialNeedsCat() {
           petUrl.textContent = "Take me to Pet Profile";
           petUrl.href = data.animals[i].url;
           petUrl.setAttribute("target", "_blank");
+
+          if (petBio) {
+            var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+            petBio.textContent = filterBio;
+          } 
 
           petUrl.classList.add("searched-pet-link")
 
@@ -438,6 +442,9 @@ function fetchSpecialNeedsDog() {
           var petBio = document.createElement("p");
           var petUrl = document.createElement("a");
 
+          var bio = data.animals[i].description
+          var filterBio = bio.replaceAll("&amp;#39;","'").replaceAll("&#039;", "'").replaceAll("amp;#34", "'");
+          petBio.textContent = filterBio
 
           petName.textContent = data.animals[i].name;
           petPic.setAttribute("src", data.animals[i].primary_photo_cropped.medium);
