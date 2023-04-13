@@ -14,18 +14,35 @@ section {
 
 section h1 {
   font-size: 3rem;
-  font-family: cursive;
+  font-family: 'DynaPuff', cursive;
   text-align: center;
 }
 
 section p {
   font-size: 2.5rem;
-  font-family: cursive;
+  font-family: 'DynaPuff', cursive;
   text-align: center;
 }
 
+section h2, h3, h4 {
+  font-family: 'DynaPuff', cursive;
+  text-align: center;
+}
+
+/* Featured Pet Bios */
+.featured-pet-bio {
+    font-size: 1rem;
+    font-family: 'DynaPuff', cursive;
+    text-align: center;
+}
+
+ /* hamburger & burger list styling */
 .circlecheck {
   display: none;
+}
+
+#hamburgerfont {
+    font-family: 'DynaPuff', cursive;
 }
 
 .burger {
@@ -45,8 +62,8 @@ section p {
 
 .background {
   position: fixed;
-  top: 5%; 
-  right: 5.5%;   
+  top: 7%; 
+  right: 5.6%;   
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
@@ -132,7 +149,47 @@ section p {
   top: 0;
   transform: rotate(135deg);
 }
+
 .circlecheck:checked + .burger .buns::after {
   top: 0;
   transform: rotate(-135deg);
+}
+
+/* featuerd pet styling */
+#featuredPet {
+    font-family: 'DynaPuff', cursive;
+}
+
+/* pet result styling */
+
+#petName {
+    font-size: 2rem;
+    font-family: 'DynaPuff', cursive;
+    color:rgba(128, 0, 128);
+}
+
+#petBio {
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+#adoptMe {
+    font-family: 'DynaPuff', cursive;
+}
+
+.feeline-lucky-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'DynaPuff', cursive;
+}
+
+.featured-pet-link, .searched-pet-link {
+    font-family: 'DynaPuff', cursive;
+    color:rgba(128, 0, 128);
+    text-decoration: underline;
+}
+
+#card1, #card2, #card3 {
+    text-align: center;
 }
